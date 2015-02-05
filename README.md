@@ -13,6 +13,29 @@ actual implementations.
 * How to implement common data structures
 * Which algorithms are most efficient for sorting / searching
 
+## Using this Project
+
+I've provided a file to set the `$GOPATH` for your project in the
+`bin/postactivate` hook. I use this with Python Virtualenvwrapper to handle
+things, but you can just as easily run:
+
+```
+$ bash bin/postactivate
+```
+
+This will allow you to `go get ...` items from Github and have them locally.
+Not sure if this is best practice as it's something I've struggled to
+understand. Nevertheless, I've also provided a postdeactivate hook to unset
+the variable.
+
+```
+$ bash bin/postdeactivate
+```
+
+Ideally you want to have these fire off when CDing into / out of your directory.
+[Autoenv](https://github.com/kennethreitz/autoenv) is one solution for this,
+but I prefer [Vrtualenv with Virtualenvwrapper](http://programeveryday.com/post/setting-up-a-python-development-environment-to-make-developing-a-breeze/).
+
 ## Table of Contents
 
 ### Data-Structures
