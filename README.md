@@ -18,6 +18,7 @@ actual implementations.
 ### Data-Structures
 
 * [Binary Search Tree](https://github.com/dansackett/algorithms/tree/master/data-structures/binary-tree) ([Wiki](http://en.wikipedia.org/wiki/Binary_search_tree))
+* [Node](https://github.com/dansackett/algorithms/tree/master/data-structures/node) ([Wiki](http://en.wikipedia.org/wiki/Node_%28computer_science%29))
 * Hash Tables
 * Linked List
 * Matrix
