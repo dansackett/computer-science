@@ -19,19 +19,19 @@ package node
 import ()
 
 type Node struct {
-	Value int
+	Value interface{}
 	Next  *Node
 }
 
-func NewNode(v int) *Node {
+func NewNode(v interface{}) *Node {
 	return &Node{Value: v}
 }
 
-func (n *Node) GetValue() int {
+func (n *Node) GetValue() interface{} {
 	return n.Value
 }
 
-func (n *Node) SetValue(v int) {
+func (n *Node) SetValue(v interface{}) {
 	n.Value = v
 }
 
