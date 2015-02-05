@@ -1,4 +1,4 @@
-# Data-Structures and Algorithms in Golang [![Build Status](https://travis-ci.org/dansackett/algorithms.svg?branch=master)](https://travis-ci.org/dansackett/algorithms)
+# Data-Structures & Algorithms [![Build Status](https://travis-ci.org/dansackett/algorithms.svg?branch=master)](https://travis-ci.org/dansackett/algorithms)
 
 In an effort to learn more Golang and understand computer science concepts
 better, I'm pairing the two in order to multiply my efforts. This repo's
