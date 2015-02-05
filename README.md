@@ -17,9 +17,7 @@ actual implementations.
 
 ### Data-Structures
 
-* Binary Tree
-* Binary Search Tree
-* Graph
+* [Binary Search Tree](https://github.com/dansackett/algorithms/tree/master/data-structures/binary-tree) ([Wiki](http://en.wikipedia.org/wiki/Binary_search_tree))
 * Hash Tables
 * Linked List
 * Matrix
@@ -28,6 +26,7 @@ actual implementations.
 * Queue
 * Stack
 * Trie
+* Graph
 
 ### Graph algorithms
 
