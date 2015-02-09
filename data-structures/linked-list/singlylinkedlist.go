@@ -1,9 +1,7 @@
 package singlylinkedlist
 
 import (
-	"fmt"
 	"github.com/dansackett/algorithms/data-structures/node"
-	"github.com/dansackett/algorithms/utils"
 )
 
 type List struct {
@@ -33,7 +31,7 @@ func (l *List) Prepend(v interface{}) {
 		l.Head = n
 		l.Tail = n
 	} else {
-		n.next = l.Head
+		n.Next = l.Head
 		l.Head = n
 	}
 }
@@ -54,12 +52,6 @@ func (l *List) Clear() {
 	l.Length = 0
 }
 
-func (l *List) Contains(v interface{}) bool {
-}
-
-func (l *List) Find(v interface{}) *node.Node {
-}
-
 func (l *List) Len() int {
 	return l.Length
 }
@@ -69,7 +61,7 @@ func (l *List) IsEmpty() bool {
 }
 
 func (l *List) Set(i int, v interface{}) {
-	c = 0
+	c := 0
 	for n := l.Head; n != nil; n = n.Next {
 		if c == i {
 			n.Value = v
@@ -80,7 +72,7 @@ func (l *List) Set(i int, v interface{}) {
 }
 
 func (l *List) RemoveNode(n *node.Node) {
-	p = nil
+	p := node.NewNode(0)
 	for m := l.Head; m != nil; m = m.Next {
 		if m == n {
 			p.Next = m.Next
@@ -91,34 +83,61 @@ func (l *List) RemoveNode(n *node.Node) {
 }
 
 func (l *List) RemoveIndex(i int) {
-	c = 0
-	p = nil
+	c := 0
+	p := node.NewNode(0)
 	for n := l.Head; n != nil; n = n.Next {
 		if c == i {
 			p.Next = n.Next
 			break
 		}
 		c++
-		p = m
 	}
 }
 
 func (l *List) Pop() *node.Node {
-	p = nil
-	for n := l.Head; n != nil; n = n.Next {
-		if c == i {
-			p.Next = n.Next
-			break
-		}
-		p = m
+	if l.Length == 0 {
+		return nil
 	}
+	if l.Length == 1 {
+		h := l.Head
+		l.Clear()
+		return h
+	}
+	p := node.NewNode(0)
+	for n := l.Head; n != nil; n = n.Next {
+		if n.Next == l.Tail {
+			t := l.Tail
+			n.Next = nil
+			l.Tail = n
+			return t
+		}
+		p = n
+	}
+	p = nil
+	return p
 }
 
 func (l *List) PopLeft() *node.Node {
+	if l.Length == 0 {
+		return nil
+	}
+	if l.Length == 1 {
+		h := l.Head
+		l.Clear()
+		return h
+	}
 	n := l.Head
 	l.Head = n.Next
 	return n
 }
 
-func (l *List) Iter() {
-}
+// func (l *List) Contains(v interface{}) bool {
+// 	return true
+// }
+
+// func (l *List) Find(v interface{}) *node.Node {
+// 	return
+// }
+
+// func (l *List) Iter() {
+// }
