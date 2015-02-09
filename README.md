@@ -42,8 +42,8 @@ but I prefer [Vrtualenv with Virtualenvwrapper](http://programeveryday.com/post/
 
 * [Binary Search Tree](https://github.com/dansackett/algorithms/tree/master/data-structures/binary-tree) ([Wiki](http://en.wikipedia.org/wiki/Binary_search_tree))
 * [Node](https://github.com/dansackett/algorithms/tree/master/data-structures/node) ([Wiki](http://en.wikipedia.org/wiki/Node_%28computer_science%29))
+* [Linked List](https://github.com/dansackett/algorithms/tree/master/data-structures/linked-list) ([Wiki](http://en.wikipedia.org/wiki/Linked_list))
 * Hash Tables
-* Linked List
 * Matrix
 * Min/Max Heap
 * Priority Queue
