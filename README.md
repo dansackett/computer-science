@@ -1,63 +1,28 @@
-# Data-Structures & Algorithms [![Build Status](https://travis-ci.org/dansackett/algorithms.svg?branch=master)](https://travis-ci.org/dansackett/algorithms)
+# Computer Science - Practice and Exploration
 
-In an effort to learn more Golang and understand computer science concepts
-better, I'm pairing the two in order to multiply my efforts. This repo's
-design is based off that of [arnauddri](https://github.com/arnauddri/algorithms).
-I merely took the structure and CS concepts as reference and ignored the
-actual implementations.
+This repository will be a place to practice computer science and crytpography principles in Golang.
 
-## What I Want to Learn
+The following items are going to be examined:
 
-* How to write Idiomatic Golang code
-* How to write tests for Golang code
-* How to implement common data structures
-* Which algorithms are most efficient for sorting / searching
+### Data Structures
 
-## Using this Project
-
-I've provided a file to set the `$GOPATH` for your project in the
-`bin/postactivate` hook. I use this with Python Virtualenvwrapper to handle
-things, but you can just as easily run:
-
-```
-$ bash bin/postactivate
-```
-
-This will allow you to `go get ...` items from Github and have them locally.
-Not sure if this is best practice as it's something I've struggled to
-understand. Nevertheless, I've also provided a postdeactivate hook to unset
-the variable.
-
-```
-$ bash bin/postdeactivate
-```
-
-Ideally you want to have these fire off when CDing into / out of your directory.
-[Autoenv](https://github.com/kennethreitz/autoenv) is one solution for this,
-but I prefer [Vrtualenv with Virtualenvwrapper](http://programeveryday.com/post/setting-up-a-python-development-environment-to-make-developing-a-breeze/).
-
-## Table of Contents
-
-### Data-Structures
-
-* [Binary Search Tree](https://github.com/dansackett/algorithms/tree/master/data-structures/binary-tree) ([Wiki](http://en.wikipedia.org/wiki/Binary_search_tree))
-* [Node](https://github.com/dansackett/algorithms/tree/master/data-structures/node) ([Wiki](http://en.wikipedia.org/wiki/Node_%28computer_science%29))
-* [Linked List](https://github.com/dansackett/algorithms/tree/master/data-structures/linked-list) ([Wiki](http://en.wikipedia.org/wiki/Linked_list))
+* Linked List
+* Binary Search Tree
+* Red-Black Tree
+* AVL Tree
+* Heap (Binary, Binomial, Fibonacci)
+* B-Tree
 * Hash Tables
 * Matrix
 * Min/Max Heap
 * Priority Queue
 * Queue
+* Deque
 * Stack
 * Trie
 * Graph
 
 ### Graph algorithms
-
-**Searching:**
-* Depth First Search
-* Breadth First Search
-* Kosaraju's Algorithm (find all SCCs)
 
 **Shortest path:**
 * Breadth First Search Shortest Path
@@ -66,7 +31,7 @@ but I prefer [Vrtualenv with Virtualenvwrapper](http://programeveryday.com/post/
 **Sorting:**
 * Topological Sort
 
-### Maths algorithms
+### Math algorithms
 
 * Binary GCD algorithm
 * Closest pairs
@@ -94,3 +59,27 @@ but I prefer [Vrtualenv with Virtualenvwrapper](http://programeveryday.com/post/
 ### Searching algorithms
 
 * Binary Search
+* Linear Search
+* Depth First Search
+* Breadth First Search
+
+### Design Patterns
+
+* Factory
+* Singleton
+* Adapter
+* Decorator
+* Observer
+* Iterator
+* MVC
+
+### Cryptography
+
+**Symmetric-Key**
+* Stream Ciphers (RC4, Salsa20, SOSEMANUK, FISH)
+* Block Ciphers (AES, DES, Triple DES, Blowfish)
+* Hash Functions (MD5, SHA1, SHA2, HMAC, )
+
+**Public Key Cryptography**
+* RSA Algorithm
+* DSA Algorithm

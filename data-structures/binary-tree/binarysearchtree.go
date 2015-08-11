@@ -11,8 +11,7 @@
 * is my attempt at creating a self-balancing binary search tree. For this to
 * be true, the following must also be true:
 *
-* - Upon Insertion and Deletion, the BST reshuffles itself so not to become
-*	unbalanced.
+* - Upon Insertion and Deletion, the BST reshuffles itself so not to become	unbalanced.
 * - At all times, the BST follows standard BST principles laid out above.
 *
 * To do this, we have a BST struct and a Node struct. a BST is a collection of
@@ -140,6 +139,14 @@ func (t *BST) Lookup(k int) *Node {
 	return t._Lookup(k, t.Root)
 }
 
+func (t *BST) Contains(k int) bool {
+	f := t.Lookup(k)
+	if f != nil {
+		return true
+	}
+	return false
+}
+
 func (t *BST) Remove(k int) bool {
 	if t.Root == nil {
 		return false
@@ -162,16 +169,15 @@ func (t *BST) CreateSlice(n *Node) []int {
 	if n == nil {
 		return s
 	}
+
+	left := t.CreateSlice(n.Left)
+	right := t.CreateSlice(n.Right)
+
 	if n.Key == -1 {
-		left := t.CreateSlice(n.Left)
-		right := t.CreateSlice(n.Right)
 		s = append(s, left...)
 		s = append(s, right...)
 		return s
 	}
-
-	left := t.CreateSlice(n.Left)
-	right := t.CreateSlice(n.Right)
 
 	// This is an InOrder representation
 	s = append(s, left...)
@@ -179,6 +185,10 @@ func (t *BST) CreateSlice(n *Node) []int {
 	s = append(s, right...)
 
 	return s
+}
+
+func (t *BST) List() []int {
+	return t.CreateSlice(t.Root)
 }
 
 func (t *BST) _Balance(s []int) {

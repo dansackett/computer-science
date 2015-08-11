@@ -1,77 +1,53 @@
 package binarysearchtree
 
 import (
-	"fmt"
+	. "github.com/smartystreets/goconvey/convey"
 	"testing"
 )
 
 func TestBST(t *testing.T) {
-	t1 := NewBST()
-
-	// Test insert
-	t1.Insert(16)
-	t1.Insert(25)
-	t1.Insert(42)
-
-	if t1.Size() != 3 {
-		fmt.Println(t1.Size())
-		t.Error()
-	}
-
-	// Test clearkey
-	t1.Root.ClearKey()
-	if t1.Root.Key != -1 {
-		fmt.Println(t1.Root.Key)
-		t.Error()
-	}
-
-	// Test compare
-	t1.Root.Key = 16
-	c := Compare(t1.Root, t1.Root.Right)
-	if c != -1 || c == 1 || c == 0 {
-		fmt.Println(c)
-		t.Error()
-	}
-
-	// Test lookup - Does exist
-	n1 := t1.Lookup(25)
-	if n1.Key != 25 {
-		fmt.Println(n1.Key)
-		t.Error()
-	}
-
-	// Test lookup - Does not exist
-	n2 := t1.Lookup(4)
-	if n2 != nil {
-		fmt.Println(n2)
-		t.Error()
-	}
-
-	// Test massinsert
-	t2 := NewBST()
-	x := []int{16, 25, 42, 8, 62, 49, 58}
-	t2.MassInsert(x)
-	if t2.Size() != 7 {
-		fmt.Println(t2.Size())
-		t.Error()
-	}
-
-	// Test remove
-	t2.Remove(58)
-	if found := t2.Lookup(58); found != nil {
-		fmt.Println("8 exists")
-		t.Error()
-	}
-
-	if t2.Size() != 6 {
-		fmt.Println(t2.Size())
-		t.Error()
-	}
-
-	// Test balance
-	t2.Balance()
-	if t2.Root.Key != 42 {
-		fmt.Println(t2.Root.Key)
-		t.Error()
-	}
+	Convey("Given an empty BST", t, func() {
+		empty := NewBST()
+		Convey("it has size of zero", func() {
+			So(empty.Size(), ShouldEqual, 0)
+		})
+		Convey("it can insert many elements", func() {
+			empty.MassInsert([]int{3, 7, 1, 19, 10})
+			So(empty.Size(), ShouldEqual, 5)
+			So(empty.Contains(19), ShouldBeTrue)
+		})
+	})
+	Convey("Given a BST with one element", t, func() {
+		single := NewBST()
+		single.Insert(16)
+		Convey("it has size of 1", func() {
+			So(single.Size(), ShouldEqual, 1)
+		})
+		Convey("it contains the element", func() {
+			So(single.Contains(16), ShouldBeTrue)
+		})
+	})
+	Convey("Given a BST with many elements", t, func() {
+		multiple := NewBST()
+		multiple.MassInsert([]int{3, 7, 1, 19, 10})
+		Convey("it has size greater than 1", func() {
+			So(multiple.Size(), ShouldBeGreaterThan, 1)
+		})
+		Convey("it contains the elements", func() {
+			So(multiple.Contains(3), ShouldBeTrue)
+			So(multiple.Contains(7), ShouldBeTrue)
+			So(multiple.Contains(1), ShouldBeTrue)
+			So(multiple.Contains(19), ShouldBeTrue)
+			So(multiple.Contains(10), ShouldBeTrue)
+		})
+		Convey("it can be balanced", func() {
+			multiple.Balance()
+			So(multiple.Root.Key, ShouldEqual, 7)
+		})
+		Convey("it can delete elements", func() {
+			multiple.Remove(19)
+			So(multiple.Contains(19), ShouldBeFalse)
+			So(multiple.Size(), ShouldEqual, 4)
+		})
+	})
 }
