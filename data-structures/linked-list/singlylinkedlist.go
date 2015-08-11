@@ -17,7 +17,10 @@ func NewSingleNode(v interface{}) *SingleNode {
 
 // Returns the item that follows a node
 func (n *SingleNode) Next() *SingleNode {
-	return n.Next
+	if n.Next {
+		return n.Next
+	}
+	return nil
 }
 
 // SingleList is an instance of a SinglyLinkedList
@@ -64,54 +67,61 @@ func (l *SingleList) _FindPrevByValue(v interface{}) (bool, *SingleNode) {
 	return l._FindPrevBy(v, "value")
 }
 
+// Convenience method for adding a node after another. It accepts a current
+// node and a value to insert
+func (l *SingleList) _AddAfterNode(prev *SingleNode, v interface{}) *SingleNode {
+	new_node := NewSingleNode(v)
+	if prev == nil {
+		new_node.Next = l.Root
+		l.Root = new_node
+	} else if prev.Next().Next() == nil {
+		prev.Next.Next = new_node
+	} else {
+		new_node.Next = prev.Next()
+		prev.Next = new_node
+	}
+	l.Length++
+	return new_node
+}
+
+// Convenience method for removing a node after another. It accepts a current node.
+func (l *SingleList) _RemoveAfterNode(prev *SingleNode) *SingleNode {
+	if prev == nil {
+		l.Root = l.Root.Next()
+	} else if prev.Next().Next() == nil {
+		prev.Next = nil
+	} else {
+		prev.Next = prev.Next().Next()
+	}
+	l.Length--
+	return new_node
+}
+
 // Based on an index, insert a new value into the list
 func (l *SingleList) Insert(idx int, v interface{}) bool {
 	exists, _, prev := l._FindPrevByIndex(idx)
 	if exists {
-		if prev == l.Root {
-			l.Prepend(v)
-		} else {
-			new_node := NewSingeNode(v)
-			new_node.Next = prev.Next()
-			prev.Next = new_node
-			l.Length += 1
-		}
+		l._AddAfterNode(prev, v)
 		return true
 	}
 	return false
 }
 
 // Add a new value to the end of the list
-func (l *SingleList) Append(v interface{}) bool {
-	n := NewSingleNode(v)
-	if l.IsEmpty() {
-		l.Root = n
-	} else {
-		l.GetLast().Next = n
-	}
-	l.Length += 1
-	return true
+func (l *SingleList) Append(v interface{}) {
+	l._AddAfterNode(l.GetLast(), v)
 }
 
 // With a slice of values, add each to the end of the list
-func (l *SingleList) AppendMultiple(values []interface{}) bool {
+func (l *SingleList) AppendMultiple(values []interface{}) {
 	for v, _ := range values {
 		l.Append(v)
 	}
-	return true
 }
 
 // Add a new value to the beginning of the list
-func (l *SingleList) Prepend(v interface{}) bool {
-	n := NewSingleNode(v)
-	if l.IsEmpty() {
-		l.Root = n
-	} else {
-		n.Next = l.Root
-		l.Root = n
-	}
-	l.Length += 1
-	return true
+func (l *SingleList) Prepend(v interface{}) {
+	l._AddAfterNode(l.GetFirst(), v)
 }
 
 // Check if a value is currently in the list
@@ -122,18 +132,12 @@ func (l *SingleList) Contains(v interface{}) bool {
 
 // Get a node from the list based on its index
 func (l *SingleList) Get(idx int) *SingleNode {
-	exists, _, prev := l._FindPrevByIndex(idx)
-	if !exists {
-		return nil
-	}
+	_, _, prev := l._FindPrevByIndex(idx)
 	return prev.Next()
 }
 
 // Get the first node in the list (root)
 func (l *SingleList) GetFirst() *SingleNode {
-	if l.IsEmpty() {
-		return nil
-	}
 	return l.Root
 }
 
@@ -165,37 +169,23 @@ func (l *SingleList) LastIndexOf(v interface{}) int {
 }
 
 // Remove the first match for the given value
-func (l *SingleList) Remove(v interface{}) bool {
+func (l *SingleList) Remove(v interface{}) {
 	exists, _, prev := l._FindPrevByValue(v)
-	if exists {
-		if prev == l.Root {
-			l.PopLeft()
-		} else {
-			prev.Next = n.Next()
-			n = nil
-		}
-		return true
-	}
-	return false
+	l._RemoveAfterNode(prev)
 }
 
 // Return and remove the last node in the list
 func (l *SingleList) Pop() *SingleNode {
-	last_prev := l.Get(l.Size() - 2)
-	last := last_prev.Next()
-	last_Prev.Next = nil
-	return last
+	return l._RemoveAfterNode(l.GetLast())
 }
 
 // Return and remove the first node in the list
 func (l *SingleList) LeftPop() *SingleNode {
-	root := l.Root
-	l.Root = root.Next()
-	return root
+	return l._RemoveAfterNode(l.GetFirst())
 }
 
 // Update the value of a node at a given index
-func (l *SingleList) Set(idx int, v interface{}) bool {
+func (l *SingleList) Set(idx int, v interface{}) {
 	l.Get(idx).Value = v
 }
 
