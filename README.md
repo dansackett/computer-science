@@ -6,7 +6,7 @@ The following items are going to be examined:
 
 ### Data Structures
 
-* Linked List
+* [Linked List](https://github.com/dansackett/computer-science/blob/master/data-structures/linked-list/linkedlist.go)
 * Binary Search Tree
 * Red-Black Tree
 * AVL Tree
@@ -16,7 +16,7 @@ The following items are going to be examined:
 * Matrix
 * Min/Max Heap
 * Priority Queue
-* Queue
+* [Queue](https://github.com/dansackett/computer-science/blob/master/data-structures/queue/queue.go)
 * Deque
 * Stack
 * Trie
@@ -25,7 +25,7 @@ The following items are going to be examined:
 ### Graph algorithms
 
 **Shortest path:**
-* Breadth First Search Shortest Path
+* [Breadth First Search](https://github.com/dansackett/computer-science/blob/master/algorithms/graph/breadth_first_search.go)
 * Dijkstra
 
 **Sorting:**
@@ -50,18 +50,24 @@ The following items are going to be examined:
 
 * Bubble Sort
 * Heap Sort
-* Quick Sort
-* Merge Sort
-* Insertion Sort
+* [Quick Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/quick.go)
+* [Merge Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/merge.go)
+* [Insertion Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/insertion.go)
 * Shell Sort
-* Selection Sort
+* [Selection Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/selection.go)
 
 ### Searching algorithms
 
-* Binary Search
-* Linear Search
+* [Binary Search](https://github.com/dansackett/computer-science/blob/master/algorithms/searching/binary.go)
+* [Linear Search](https://github.com/dansackett/computer-science/blob/master/algorithms/searching/linear.go)
 * Depth First Search
 * Breadth First Search
+
+### Misc
+
+* [Recursive Palindromes](https://github.com/dansackett/computer-science/blob/master/algorithms/recursion/palindromes.go)
+* [Towers of Hanoi](https://github.com/dansackett/computer-science/blob/master/algorithms/recursion/towers_of_hanoi.go)
+* [Recursive Powers](https://github.com/dansackett/computer-science/blob/master/algorithms/recursion/powers.go)
 
 ### Design Patterns
 
