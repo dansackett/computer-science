@@ -1,20 +1,33 @@
 package graph
 
 import "testing"
+import g "../../data-structures/graph"
+
+func GetTestGraph() *g.Graph {
+	graph := g.NewGraph()
+	v0 := graph.AddVertex(0)
+	v1 := graph.AddVertex(1)
+	v2 := graph.AddVertex(2)
+	v3 := graph.AddVertex(3)
+	v4 := graph.AddVertex(4)
+	v5 := graph.AddVertex(5)
+	v6 := graph.AddVertex(6)
+	graph.AddVertex(7)
+
+	graph.AddEdge(v0, v1)
+	graph.AddEdge(v1, v4)
+	graph.AddEdge(v1, v5)
+	graph.AddEdge(v2, v3)
+	graph.AddEdge(v2, v4)
+	graph.AddEdge(v2, v5)
+	graph.AddEdge(v3, v6)
+	graph.AddEdge(v5, v6)
+	return graph
+}
 
 func TestBreadthFirstSearchWorks(t *testing.T) {
-	graph := [][]int{
-		[]int{1},
-		[]int{0, 4, 5},
-		[]int{3, 4, 5},
-		[]int{2, 6},
-		[]int{1, 2},
-		[]int{1, 2, 6},
-		[]int{3, 5},
-		[]int{},
-	}
-
-	result := BreadthFirstSearch(graph, 3)
+	graph := GetTestGraph()
+	result := BreadthFirstSearch(graph.ToAdjacencyList(), 3)
 
 	if result[0]["distance"] != 4 && result[0]["parent"] != 1 {
 		msg := "For vertex 0, distance should be 4 and parent should be 1. Found distance as %d and parent as %d"

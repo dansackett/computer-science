@@ -20,7 +20,7 @@ The following items are going to be examined:
 * Deque
 * Stack
 * Trie
-* Graph
+* [Graph](https://github.com/dansackett/computer-science/blob/master/data-structures/graph/graph.go)
 
 ### Graph algorithms
 
