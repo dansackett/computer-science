@@ -27,13 +27,15 @@ The following items are going to be examined:
 ### Graph algorithms
 
 **Shortest path:**
-* [Breadth First Search](https://github.com/dansackett/computer-science/blob/master/algorithms/graph/search)
-* Depth First Search
 * Dijkstra
 * Floyd–Warshall
 
 **Sorting:**
 * Topological Sort
+
+**Searcing:**
+* [Breadth First Search](https://github.com/dansackett/computer-science/blob/master/algorithms/graph/search)
+* Depth First Search
 
 ### Math algorithms
 
