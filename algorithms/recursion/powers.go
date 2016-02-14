@@ -9,8 +9,6 @@
 // - Any negative power == 1 / x^-n
 // - Any positive even number == x^n/2 * x^n/2
 // - Any positive odd number == x^n-1 * x
-//
-// ----------------------------------------------------------------------------
 package recursion
 
 func Power(x, n int) int {

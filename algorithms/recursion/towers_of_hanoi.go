@@ -11,8 +11,6 @@
 // - A block can move to any peg
 //
 // Solving this with recursion is actually quite fun!
-//
-// ----------------------------------------------------------------------------
 package recursion
 
 import "fmt"

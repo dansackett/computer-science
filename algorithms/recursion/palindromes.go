@@ -6,8 +6,6 @@
 // backwards. We can use recursion to determine this by checking if the first
 // and last letters are equal, stripping the first and last letters, and
 // checking again until we are sure that the word is in fact a palindrome.
-//
-// ----------------------------------------------------------------------------
 package recursion
 
 // FirstChar finds the first character of a string
