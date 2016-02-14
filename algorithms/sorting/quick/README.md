@@ -44,6 +44,8 @@ This is efficient in a lot of ways.
 
 ## Time Complexity
 
-**Worst case:** O(n^2)
-**Best case:** O(n lg n)
-**Average case:** O(n lg n)
+| Case      | Complexity  |
+| --------- |:-----------:|
+| Worst     | `O(n^2)`    |
+| Best      | `O(n lg n)` |
+| Average   | `O(n lg n)` |

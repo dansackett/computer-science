@@ -40,6 +40,8 @@ place 5 in the index 4. Our set is now sorted!
 
 ## Time Complexity
 
-**Worst case:** O(n^2)
-**Best case:** O(n)
-**Average case:** O(n^2)
+| Case      | Complexity |
+| --------- |:----------:|
+| Worst     | `O(n^2)`   |
+| Best      | `O(n^2)`   |
+| Average   | `O(n^2)`   |

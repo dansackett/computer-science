@@ -27,6 +27,8 @@ end of our resulting set to get the full set back sorted.
 
 ## Time Complexity
 
-**Worst case:** O(n lg n)
-**Best case:** O(n lg n)
-**Average case:** O(n lg n)
+| Case      | Complexity  |
+| --------- |:-----------:|
+| Worst     | `O(n lg n)` |
+| Best      | `O(n lg n)` |
+| Average   | `O(n lg n)` |
