@@ -1,6 +1,6 @@
 package graph
 
-import q "../../data-structures/queue"
+import q "../../../data-structures/queue"
 
 func BreadthFirstSearch(graph [][]int, source int) []map[string]int {
 	data := make([]map[string]int, len(graph))

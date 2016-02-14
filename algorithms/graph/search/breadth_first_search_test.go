@@ -1,7 +1,7 @@
 package graph
 
 import "testing"
-import g "../../data-structures/graph"
+import g "../../../data-structures/graph"
 
 func GetTestGraph() *g.Graph {
 	graph := g.NewGraph()

@@ -16,6 +16,11 @@ func quickSort(data []int, low, high int) {
 	}
 }
 
+// Swap takes two indices and switches the values between them.
+func Swap(data []int, i, j int) {
+	data[i], data[j] = data[j], data[i]
+}
+
 // Partition swaps values in the data while holding a reference to the pivot
 // value to return for the recursive search to decrease.
 func Partition(data []int, low, high int) int {

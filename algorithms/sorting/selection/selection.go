@@ -8,6 +8,11 @@ func SelectionSort(data []int) {
 	}
 }
 
+// Swap takes two indices and switches the values between them.
+func Swap(data []int, i, j int) {
+	data[i], data[j] = data[j], data[i]
+}
+
 // MinIndex finds the index of the next smallest number in a slice.
 func MinIndex(data []int, initial int) int {
 	minValue := data[initial]
