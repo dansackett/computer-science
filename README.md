@@ -17,16 +17,20 @@ The following items are going to be examined:
 * Min/Max Heap
 * Priority Queue
 * [Queue](https://github.com/dansackett/computer-science/blob/master/data-structures/queue)
+* Set
 * Deque
 * Stack
 * Trie
+* Suffix Array
 * [Graph](https://github.com/dansackett/computer-science/blob/master/data-structures/graph)
 
 ### Graph algorithms
 
 **Shortest path:**
 * [Breadth First Search](https://github.com/dansackett/computer-science/blob/master/algorithms/graph/search)
+* Depth First Search
 * Dijkstra
+* Floyd–Warshall
 
 **Sorting:**
 * Topological Sort
@@ -50,18 +54,24 @@ The following items are going to be examined:
 
 * Bubble Sort
 * Heap Sort
+* Shell Sort
+* Heap Sort
+* Radix Sort
+* Bucket Sort
 * [Quick Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/quick)
 * [Merge Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/merge)
 * [Insertion Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/insertion)
-* Shell Sort
 * [Selection Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/selection)
 
 ### Searching algorithms
 
 * [Binary Search](https://github.com/dansackett/computer-science/blob/master/algorithms/searching/binary)
 * [Linear Search](https://github.com/dansackett/computer-science/blob/master/algorithms/searching/binary)
-* Depth First Search
-* Breadth First Search
+
+### String Matching
+
+* Knuth-Morris-Pratt (KMP)
+* Rabin-Karp
 
 ### Misc
 
