@@ -67,7 +67,7 @@ principles in Golang. The following items are going to be examined:
 ### Searching algorithms
 
 * [Binary Search](https://github.com/dansackett/computer-science/blob/master/algorithms/searching/binary)
-* [Linear Search](https://github.com/dansackett/computer-science/blob/master/algorithms/searching/binary)
+* [Linear Search](https://github.com/dansackett/computer-science/blob/master/algorithms/searching/linear)
 
 ### String Matching
 
