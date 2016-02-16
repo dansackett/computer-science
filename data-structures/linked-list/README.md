@@ -45,6 +45,14 @@ doubly linked list as the base but instead of pointing to nil at the head and
 tail, they point to a **sentinel value** which is always locked to the 0
 index. This allows us to work more efficiently with the list itself.
 
+## Use Cases
+
+A linked list is typically preferrable when:
+
+- You care about constant time inserts and deletes
+- You don't need random access to items in the list
+- You want to insert items at any point in the list
+
 ## Time Complexity
 
 In most cases, this implementation gives us an O(1) time span. There is no

@@ -9,19 +9,22 @@ principles in Golang. The following items are going to be examined:
 * Binary Search Tree
 * Red-Black Tree
 * AVL Tree
-* Heap (Binary, Binomial, Fibonacci)
 * B-Tree
 * Hash Tables
 * Matrix
 * Min/Max Heap
-* Priority Queue
-* [Queue](https://github.com/dansackett/computer-science/blob/master/data-structures/queue)
-* Set
-* Deque
-* [Stack](https://github.com/dansackett/computer-science/blob/master/data-structures/stack)
+* Heap (Binary, Binomial, Fibonacci)
 * Trie
 * Suffix Array
-* [Graph](https://github.com/dansackett/computer-science/blob/master/data-structures/graph)
+
+### Abstract Data Types
+
+* Set
+* [Deque](https://github.com/dansackett/computer-science/blob/master/data-structures/deque)
+* [Stack](https://github.com/dansackett/computer-science/blob/master/data-structures/stack)
+* [Queue](https://github.com/dansackett/computer-science/blob/master/data-structures/queue)
+* Priority Queue
+* [Graph](https://github.com/dansackett/computer-science/blob/master/data-structures/graph) (Directed, Undirected)
 
 ### Graph algorithms
 
