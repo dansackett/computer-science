@@ -44,6 +44,8 @@ pop those off the queue to get their next neighbors.
 
 ## Time Complexity
 
-In the worst case, the complexity is defined as O(|V| + |E|) where |V|
-represents the number of vertices and |E| represents the number of edges.
-With the adjacency list this expects, it can be defined as ¿(|V| + |E|).
+`|V|` represents the number of vertices and `|E|` represents the number of edges.
+
+| Case      | Complexity     |
+| --------- |:--------------:|
+| Find      | `O(|V| + |E|)` |

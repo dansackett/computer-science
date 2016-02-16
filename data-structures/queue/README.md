@@ -12,3 +12,7 @@ container.
 Operations in a queue are O(1) as we simply push an item in and pop and
 item off without any iteration or checking. This is especially true in this
 implementation using a circular doubly linked list.
+
+| Case      | Complexity  |
+| --------- |:-----------:|
+| All       | `O(1)`      |

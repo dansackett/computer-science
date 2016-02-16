@@ -1,8 +1,7 @@
 # Computer Science - Practice and Exploration
 
-This repository will be a place to practice computer science and crytpography principles in Golang.
-
-The following items are going to be examined:
+This repository will be a place to practice computer science and crytpography
+principles in Golang. The following items are going to be examined:
 
 ### Data Structures
 
