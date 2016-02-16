@@ -31,6 +31,7 @@ func (q *Queue) IsEmpty() bool {
 	return true
 }
 
+// Size checks the length of the queue
 func (q *Queue) Size() int {
 	return q.Items.Size()
 }

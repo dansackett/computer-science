@@ -18,7 +18,7 @@ principles in Golang. The following items are going to be examined:
 * [Queue](https://github.com/dansackett/computer-science/blob/master/data-structures/queue)
 * Set
 * Deque
-* Stack
+* [Stack](https://github.com/dansackett/computer-science/blob/master/data-structures/stack)
 * Trie
 * Suffix Array
 * [Graph](https://github.com/dansackett/computer-science/blob/master/data-structures/graph)
