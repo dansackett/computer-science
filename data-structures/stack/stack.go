@@ -13,13 +13,13 @@ func NewStack() *Stack {
 }
 
 // Push places a new value on the end of the stack
-func (q *Stack) Push(val int) {
+func (q *Stack) Push(val interface{}) {
 	q.Items.Append(val)
 }
 
 // Pop removes the value at the end of the stack
-func (q *Stack) Pop() int {
-	return q.Items.Pop().Value.(int)
+func (q *Stack) Pop() interface{} {
+	return q.Items.Pop().Value
 }
 
 // IsEmpty checks if there are any items currently in the stack.

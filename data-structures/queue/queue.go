@@ -13,14 +13,14 @@ func NewQueue() *Queue {
 }
 
 // Enqueue pushes a new value onto the back of the queue.
-func (q *Queue) Enqueue(val int) {
+func (q *Queue) Enqueue(val interface{}) {
 	q.Items.Prepend(val)
 }
 
 // Dequeue pops the last value of the queue off removing it from the
 // underlying list and returning the value.
-func (q *Queue) Dequeue() int {
-	return q.Items.Pop().Value.(int)
+func (q *Queue) Dequeue() interface{} {
+	return q.Items.Pop().Value
 }
 
 // IsEmpty checks if there are any items currently in the queue.
