@@ -132,9 +132,9 @@ suffixes sorted by the first 4 characters. Our new result would look like:
 | 4             | 9             | **pi**            |
 | 5             | 8             | **ppi**           |
 | 6             | 6             | **sipp**i         |
-| 6             | 3             | **siss**ippi      |
-| 7             | 2             | **ssis**sippi     |
-| 7             | 5             | **ssip**pi        |
+| 7             | 3             | **siss**ippi      |
+| 8             | 2             | **ssis**sippi     |
+| 9             | 5             | **ssip**pi        |
 
 On the next iteration, we move the "cursor" forward and can construct the same
 set of tuples for the first 8 characters. This process continues until we
