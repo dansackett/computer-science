@@ -25,7 +25,7 @@ _testmain.go
 
 # GOPATH SRC
 src/*
-bin/goconvey
+bin/
 
 # Personal List
 TODO.md
