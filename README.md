@@ -15,7 +15,7 @@ principles in Golang. The following items are going to be examined:
 * Min/Max Heap
 * Heap (Binary, Binomial, Fibonacci)
 * Trie
-* [Suffix Array](https://github.com/dansackett/computer-science/blob/master/data-structures/suffix_array)
+* [Suffix Array](https://github.com/dansackett/computer-science/blob/master/data-structures/suffix-array)
 
 ### Abstract Data Types
 
