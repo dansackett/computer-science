@@ -6,9 +6,10 @@ principles in Golang. The following items are going to be examined:
 ### Data Structures
 
 * [Linked List](https://github.com/dansackett/computer-science/blob/master/data-structures/linked-list)
-* Binary Search Tree
+* [Binary Search Tree](https://github.com/dansackett/computer-science/blob/master/data-structures/binary-search-tree)
 * Red-Black Tree
 * AVL Tree
+* Treap
 * B-Tree
 * Hash Tables
 * Matrix
