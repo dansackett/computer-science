@@ -55,7 +55,7 @@ func TestBSTDoesNotAllowDuplicates(t *testing.T) {
 	bst.Insert(10)
 	res := bst.Insert(10)
 
-	if res {
+	if res != nil {
 		t.Errorf("Added duplicate but should not have")
 	}
 

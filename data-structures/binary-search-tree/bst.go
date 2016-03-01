@@ -3,14 +3,8 @@ package bst
 // Node is an indiviual node in the BST which has a reference to its left and
 // right subtrees and is placed in the BST based on it's value.
 type Node struct {
-	Val         int
-	Left, Right *Node
-}
-
-// NewNode creates a new empty Node instance with both the left and right
-// subtrees uninitialized.
-func NewNode(val int) *Node {
-	return &Node{Val: val}
+	Val                 int
+	Parent, Left, Right *Node
 }
 
 // BST is a binary search tree beginning with a root node.
@@ -45,65 +39,54 @@ func (bst *BST) Root() *Node {
 // current value and the left subtree is not empty, we recurse into that left
 // subtree. Otherwise, we set the new node on that left subtree. The same goes
 // for the right subtree for values greater than the current.
-func (node *Node) insert(newNode *Node) bool {
-	if newNode.Val < node.Val {
-		if node.Left == nil {
-			node.Left = newNode
-			return true
+func (bst *BST) insert(curNode, newNode *Node) *Node {
+	if bst.IsEmpty() {
+		bst.root = newNode
+		return newNode
+	} else if newNode.Val < curNode.Val {
+		if curNode.Left == nil {
+			curNode.Left = newNode
+			newNode.Parent = curNode
+			return newNode
 		}
-		return node.Left.insert(newNode)
-	} else if newNode.Val > node.Val {
-		if node.Right == nil {
-			node.Right = newNode
-			return true
+		return bst.insert(curNode.Left, newNode)
+	} else if newNode.Val > curNode.Val {
+		if curNode.Right == nil {
+			curNode.Right = newNode
+			newNode.Parent = curNode
+			return newNode
 		}
-		return node.Right.insert(newNode)
+		return bst.insert(curNode.Right, newNode)
 	}
-	return false
+	return nil
 }
 
 // Insert is the entry to the recursive insert function. If we have an empty
 // BST, we set the root node. Otherwise, we recurse through the tree comparing
 // nodes until it is placed. Unless the new value is a duplicate, it will be
 // placed.
-func (bst *BST) Insert(val int) bool {
-	inserted := true
-	if bst.IsEmpty() {
-		bst.root = NewNode(val)
-	} else {
-		inserted = bst.Root().insert(NewNode(val))
-	}
-	if inserted {
+func (bst *BST) Insert(val int) *Node {
+	if inserted := bst.insert(bst.Root(), &Node{Val: val}); inserted != nil {
 		bst.size++
+		return inserted
 	}
-	return inserted
-}
-
-// finMin is a supplementry function to deleting a node. When we are deleting
-// a node with two children, we find the minimum value of the node's right
-// subtree and return that an its parent in order to update the deleted node
-// to this node.
-func (node *Node) findMin(parent *Node) (*Node, *Node) {
-	if node.Left == nil {
-		return node, parent
-	}
-	return node.Left.findMin(node)
+	return nil
 }
 
 // link is a supplementry function to deleting a node. Based on the node being
 // deleted, it sets the parents left or right subtree root as the new node.
 // This allows us to properly remove a node and keep the child nodes under a
 // deleted node.
-func (node *Node) link(newNode, parent *Node) {
-	if parent != nil {
-		if node == parent.Left {
-			parent.Left = newNode
+func (bst *BST) link(curNode, newNode *Node) {
+	if curNode.Parent != nil {
+		if curNode == curNode.Parent.Left {
+			curNode.Parent.Left = newNode
 		} else {
-			parent.Right = newNode
+			curNode.Parent.Right = newNode
 		}
 	}
 	if newNode != nil {
-		node = parent
+		curNode = curNode.Parent
 	}
 }
 
@@ -117,29 +100,32 @@ func (node *Node) link(newNode, parent *Node) {
 // value from its location in the child tree. If there is only one child, we
 // accordingly link the parent node to this child to keep the connection. If
 // it has no children, we can safely remove this node.
-func (node *Node) del(parent *Node, val int) bool {
+func (bst *BST) del(node *Node, val int) bool {
 	switch {
 	case node == nil:
 		return false
 	case val < node.Val:
-		return node.Left.del(node, val)
+		return bst.del(node.Left, val)
 	case val > node.Val:
-		return node.Right.del(node, val)
+		return bst.del(node.Right, val)
 	case val == node.Val:
 		if node.Left != nil && node.Right != nil {
 			// Handle node with two children
-			next, nextParent := node.Right.findMin(node)
+			next := node.Right
+			for next.Left != nil {
+				next = next.Left
+			}
 			node.Val = next.Val
-			next.del(nextParent, next.Val)
+			bst.del(next, next.Val)
 		} else if node.Left != nil {
 			// Handle node with only left child
-			node.link(node.Left, parent)
+			bst.link(node, node.Left)
 		} else if node.Right != nil {
 			// Handle node with only right child
-			node.link(node.Right, parent)
+			bst.link(node, node.Right)
 		} else {
 			// Handle node with no children
-			node.link(nil, parent)
+			bst.link(node, nil)
 		}
 		return true
 	}
@@ -151,19 +137,16 @@ func (node *Node) del(parent *Node, val int) bool {
 // the new root node. In any other case, we recurse down the left and right
 // subtrees to see if the value exists to delete.
 func (bst *BST) Delete(val int) bool {
-	deleted := false
 	if bst.IsEmpty() {
 		return false
-	}
-	if bst.Root().Val == val {
-		deleted = bst.Root().del(nil, val)
-	} else {
-		deleted = bst.Root().Left.del(bst.Root(), val) || bst.Root().Right.del(bst.Root(), val)
-	}
-	if deleted {
+	} else if bst.Root().Val == val && bst.del(bst.Root(), val) {
 		bst.size--
+		return true
+	} else if bst.del(bst.Root().Left, val) || bst.del(bst.Root().Right, val) {
+		bst.size--
+		return true
 	}
-	return deleted
+	return false
 }
 
 // Iter creates a channel used for iterating through a BST and using each
