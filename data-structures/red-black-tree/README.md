@@ -155,7 +155,7 @@ case.
 If the sibling is black, we move into case 3. The following shows the case of
 a red sibling:
 
-![Red Black Tree - Case 2](https://github.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_delete_case_2.svg)
+![Red Black Tree - Case 2](https://cdn.rawgit.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_delete_case_2.svg)
 
 ### Case 3: Parent Node is Black and Sibling Tree is Black
 
@@ -170,7 +170,7 @@ then we remove that extra black node and the paths are again correct.
 If this case doesn't match we move into case 4. The following shows the above
 case:
 
-![Red Black Tree - Case 3](https://github.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_delete_case_3.svg)
+![Red Black Tree - Case 3](https://cdn.rawgit.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_delete_case_3.svg)
 
 ### Case 4: Parent Node is Red and Sibling Tree is Black
 
@@ -181,7 +181,7 @@ the parent node to black to be back where we would be after case 3.
 If the conditions don't match, you need to check case 5. The following shows
 the above case:
 
-![Red Black Tree - Case 4](https://github.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_delete_case_4.svg)
+![Red Black Tree - Case 4](https://cdn.rawgit.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_delete_case_4.svg)
 
 ### Case 5: Sibling Node is Red, Sibling's Right Child is Black, Sibling's Left Child is Red and Current Node is Parent's Left Child
 
@@ -197,7 +197,7 @@ opposite balancing operations.
 We can now move into the final case with this result. The following shows the
 above case:
 
-![Red Black Tree - Case 5](https://github.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_delete_case_5.svg)
+![Red Black Tree - Case 5](https://cdn.rawgit.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_delete_case_5.svg)
 
 ### Case 6: Sibling Node is Black, Sibling's Right Child is Red, Current Node is Parent's Left Child
 
@@ -210,7 +210,7 @@ opposite balancing operations.
 
 The following shows the above case:
 
-![Red Black Tree - Case 6](https://github.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_delete_case_6.svg)
+![Red Black Tree - Case 6](https://cdn.rawgit.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_delete_case_6.svg)
 
 ## Use Cases
 
