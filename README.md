@@ -7,7 +7,7 @@ principles in Golang. The following items are going to be examined:
 
 * [Linked List](https://github.com/dansackett/computer-science/blob/master/data-structures/linked-list)
 * [Binary Search Tree](https://github.com/dansackett/computer-science/blob/master/data-structures/binary-search-tree)
-* Red-Black Tree
+* [Red-Black Tree](https://github.com/dansackett/computer-science/blob/master/data-structures/red-black-tree)
 * AVL Tree
 * Treap
 * B-Tree
