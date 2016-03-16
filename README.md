@@ -11,7 +11,7 @@ principles in Golang. The following items are going to be examined:
 * AVL Tree
 * Treap
 * B-Tree
-* Hash Tables
+* [Hash Tables](https://github.com/dansackett/computer-science/blob/master/data-structures/hash-table)
 * Matrix
 * Min/Max Heap
 * Heap (Binary, Binomial, Fibonacci)
