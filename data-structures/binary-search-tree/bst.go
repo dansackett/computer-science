@@ -1,7 +1,7 @@
 package bst
 
-// Node is an indiviual node in the BST which has a reference to its left and
-// right subtrees and is placed in the BST based on it's value.
+import "fmt"
+
 type Node struct {
 	Val                 int
 	Parent, Left, Right *Node
@@ -31,6 +31,48 @@ func (bst *BST) IsEmpty() bool {
 // Root returns the root node of a BST.
 func (bst *BST) Root() *Node {
 	return bst.root
+}
+
+// String satisfies the println interface allowing us to print a
+// representation of the tree.
+//
+// This is borrowed from https://github.com/emirpasic/gods/blob/master/trees/redblacktree/redblacktree.go
+func (bst *BST) String() string {
+	str := "BST\n"
+	if !bst.IsEmpty() {
+		output(bst.Root(), "", true, &str)
+	}
+	return str
+}
+
+// output is the recursive print tree function borrowed from:
+// https://github.com/emirpasic/gods/blob/master/trees/redblacktree/redblacktree.go
+func output(node *Node, prefix string, isTail bool, str *string) {
+	if node.Right != nil {
+		newPrefix := prefix
+		if isTail {
+			newPrefix += "|   "
+		} else {
+			newPrefix += "    "
+		}
+		output(node.Right, newPrefix, false, str)
+	}
+	*str += prefix
+	if isTail {
+		*str += "└── "
+	} else {
+		*str += "┌── "
+	}
+	*str += fmt.Sprintf("%v", node.Val) + "\n"
+	if node.Left != nil {
+		newPrefix := prefix
+		if isTail {
+			newPrefix += "    "
+		} else {
+			newPrefix += "|   "
+		}
+		output(node.Left, newPrefix, true, str)
+	}
 }
 
 // insert is an internal recursive function which does the work required to
