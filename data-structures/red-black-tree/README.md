@@ -75,7 +75,7 @@ current node.
 
 For an example of this:
 
-![Red Black Tree - Case 3](https://github.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_insert_case_3.svg)
+![Red Black Tree - Case 3](https://cdn.rawgit.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_insert_case_3.svg)
 
 ### Case 4: Parent is Red and Uncle is Black
 
@@ -99,7 +99,7 @@ right rotation.
 
 Once this rotation is done, we move into subcase 2 no matter what the result is.
 
-![Red Black Tree - Case 4 - Subcase 1](https://github.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_insert_case_4.svg)
+![Red Black Tree - Case 4 - Subcase 1](https://cdn.rawgit.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_insert_case_4.svg)
 
 #### Subcase 2
 
@@ -109,7 +109,7 @@ grandparent's left child. We can recolor the grandparent as red, the parent
 as black, and do a right rotation. If it's down the right side, we recolor the
 same but do a left rotation.
 
-![Red Black Tree - Case 4 - Subcase 2](https://github.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_insert_case_5.svg)
+![Red Black Tree - Case 4 - Subcase 2](https://cdn.rawgit.com/dansackett/computer-science/blob/master/data-structures/red-black-tree/images/Red-black_tree_insert_case_5.svg)
 
 ## Deleting Nodes
 
