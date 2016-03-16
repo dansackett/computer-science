@@ -57,16 +57,22 @@ principles in Golang. The following items are going to be examined:
 
 ### Sorting algorithms
 
+**Bad:**
 * Bubble Sort
-* Heap Sort
-* Shell Sort
-* Heap Sort
-* Radix Sort
-* Bucket Sort
-* [Quick Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/quick)
-* [Merge Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/merge)
+
+**Basic:**
 * [Insertion Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/insertion)
 * [Selection Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/selection)
+* Shell Sort
+
+**Fast:**
+* [Quick Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/quick)
+* [Merge Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/merge)
+* Heap Sort
+
+**Other**
+* Bucket Sort
+* Radix Sort
 
 ### Searching algorithms
 
