@@ -32,8 +32,8 @@ We can now compare elements at the gap positions:
 
 **Pass 1**
 
-[`3`, 7, 8, 5, `4`, 1, 10]  3 < 4 so no swap
-[3, `7`, 8, 5, 4, `1`, 10]  7 > 1 so swap
+[`3`, 7, 8, 5, `4`, 1, 10]  3 < 4 so no swap <br />
+[3, `7`, 8, 5, 4, `1`, 10]  7 > 1 so swap <br />
 [3, 1, `8`, 5, 4, 7, `10`]  8 < 10 so no swap
 
 On second pass we determine the new gap which will be half of the previous gap
@@ -41,10 +41,10 @@ so we can use `2`.
 
 **Pass 2**
 
-[`3`, 1, `8`, 5, 4, 7, 10]  3 < 8 so no swap
-[3, `1`, 8, `5`, 4, 7, 10]  1 < 5 so no swap
-[3, 1, `8`, 5, `4`, 7, 10]  8 > 4 so swap
-[3, 1, 4, `5`, 8, `7`, 10]  5 < 7 so no swap
+[`3`, 1, `8`, 5, 4, 7, 10]  3 < 8 so no swap <br />
+[3, `1`, 8, `5`, 4, 7, 10]  1 < 5 so no swap <br />
+[3, 1, `8`, 5, `4`, 7, 10]  8 > 4 so swap <br />
+[3, 1, 4, `5`, 8, `7`, 10]  5 < 7 so no swap <br />
 [3, 1, 4, 5, `8`, 7, `10`]  8 < 10 so no swap
 
 On the third pass, the new gap is `1` so we compare every value like a bubble
@@ -52,11 +52,11 @@ sort would.
 
 **Pass 3**
 
-[`3`, `1`, 4, 5, 8, 7, 10]  3 > 1 so swap
-[1, `3`, `4`, 5, 8, 7, 10]  3 < 4 so no swap
-[1, 3, `4`, `5`, 8, 7, 10]  4 < 5 so no swap
-[1, 3, 4, `5`, `8`, 7, 10]  5 < 8 so no swap
-[1, 3, 4, 5, `8`, `7`, 10]  8 > 7 so swap
+[`3`, `1`, 4, 5, 8, 7, 10]  3 > 1 so swap <br />
+[1, `3`, `4`, 5, 8, 7, 10]  3 < 4 so no swap <br />
+[1, 3, `4`, `5`, 8, 7, 10]  4 < 5 so no swap <br />
+[1, 3, 4, `5`, `8`, 7, 10]  5 < 8 so no swap <br />
+[1, 3, 4, 5, `8`, `7`, 10]  8 > 7 so swap <br />
 [1, 3, 4, 5, 7, `8`, `10`]  8 < 10 so no swap
 
 As we can see, the array is mostly sorted by the time we finish the second
