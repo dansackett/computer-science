@@ -23,7 +23,7 @@ principles in Golang. The following items are going to be examined:
 * [Deque](https://github.com/dansackett/computer-science/blob/master/data-structures/deque)
 * [Stack](https://github.com/dansackett/computer-science/blob/master/data-structures/stack)
 * [Queue](https://github.com/dansackett/computer-science/blob/master/data-structures/queue)
-* Priority Queue
+* [Priority Queue](https://github.com/dansackett/computer-science/blob/master/data-structures/priority-queue)
 * [Graph](https://github.com/dansackett/computer-science/blob/master/data-structures/graph) (Directed, Undirected)
 
 ### Graph algorithms
