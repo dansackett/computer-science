@@ -32,8 +32,6 @@ func (v *Vertex) IsAdjacent(other *Vertex) bool {
 
 // RemoveEdge removes a neighboring vertex from its list
 func (v *Vertex) RemoveEdge(other *Vertex) bool {
-	var removeIndex int
-
 	if v.Graph != other.Graph {
 		return false
 	}
@@ -42,30 +40,22 @@ func (v *Vertex) RemoveEdge(other *Vertex) bool {
 		return false
 	}
 
-	for i, n := range v.Neighbors {
-		if n == other {
-			removeIndex = i
+	updateNeighbors := func(cur, target *Vertex) []*Vertex {
+		var removeIndex int
+		for i, n := range cur.Neighbors {
+			if n == target {
+				removeIndex = i
+			}
 		}
-	}
 
-	if len(v.Neighbors) == 1 {
-		v.Neighbors = []*Vertex{}
-	} else {
-		v.Neighbors = append(v.Neighbors[:removeIndex], v.Neighbors[removeIndex+1:]...)
-	}
-
-	for i, n := range other.Neighbors {
-		if n == v {
-			removeIndex = i
+		if len(cur.Neighbors) == 1 {
+			return []*Vertex{}
 		}
+		return append(cur.Neighbors[:removeIndex], cur.Neighbors[removeIndex+1:]...)
 	}
 
-	if len(other.Neighbors) == 1 {
-		other.Neighbors = []*Vertex{}
-	} else {
-		other.Neighbors = append(other.Neighbors[:removeIndex], other.Neighbors[removeIndex+1:]...)
-	}
-
+	v.Neighbors = updateNeighbors(v, other)
+	other.Neighbors = updateNeighbors(other, v)
 	return true
 }
 
