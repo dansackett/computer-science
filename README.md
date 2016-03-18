@@ -20,7 +20,7 @@ principles in Golang. The following items are going to be examined:
 
 ### Abstract Data Types
 
-* Set
+* [Set](https://github.com/dansackett/computer-science/blob/master/data-structures/set)
 * [Deque](https://github.com/dansackett/computer-science/blob/master/data-structures/deque)
 * [Stack](https://github.com/dansackett/computer-science/blob/master/data-structures/stack)
 * [Queue](https://github.com/dansackett/computer-science/blob/master/data-structures/queue)
