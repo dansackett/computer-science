@@ -13,8 +13,7 @@ principles in Golang. The following items are going to be examined:
 * B-Tree
 * [Hash Tables](https://github.com/dansackett/computer-science/blob/master/data-structures/hash-table)
 * Matrix
-* Min/Max Heap
-* Heap (Binary, Binomial, Fibonacci)
+* [Heap (Max / Min)](https://github.com/dansackett/computer-science/blob/master/data-structures/heap)
 * Trie
 * [Suffix Array](https://github.com/dansackett/computer-science/blob/master/data-structures/suffix-array)
 
