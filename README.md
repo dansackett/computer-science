@@ -57,12 +57,12 @@ principles in Golang. The following items are going to be examined:
 ### Sorting algorithms
 
 **Bad:**
-* Bubble Sort
+* [Bubble Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/bubble)
 
 **Basic:**
 * [Insertion Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/insertion)
 * [Selection Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/selection)
-* Shell Sort
+* [Shell Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/shell)
 
 **Fast:**
 * [Quick Sort](https://github.com/dansackett/computer-science/blob/master/algorithms/sorting/quick)
