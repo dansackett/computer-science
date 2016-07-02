@@ -43,7 +43,7 @@ following bit manipulation table:
 
 | `A`  | `B`  | `~A`     | `A & B` | `A | B` | `A ^ B` |
 |:----:|:----:|:--------:|:-------:|:-------:|:-------:|
-| 1010 | 1100 |	11110101 | 1000    | 1110    | 0110    |
+| 1010 | 1100 |	0101     | 1000    | 1110    | 0110    |
 
 Hopefully you can see that we work on each bit and can reference the truth
 table to see the manipulation needed. For example look at `A & B`. Since A is
