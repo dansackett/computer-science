@@ -108,7 +108,7 @@ principles in Golang. The following items are going to be examined:
 
 [Cryptography Terms](https://github.com/dansackett/computer-science/blob/master/cryptography/)
 
-[Symmetric-Key](https://github.com/dansackett/computer-science/blob/master/cryptography/symmetric-key/)
+**[Symmetric-Key](https://github.com/dansackett/computer-science/blob/master/cryptography/symmetric-key/)**
 * [Stream Ciphers](https://github.com/dansackett/computer-science/blob/master/cryptography/symmetric-key/stream-ciphers/) ([RC4](https://github.com/dansackett/computer-science/blob/master/cryptography/symmetric-key/stream-ciphers/rc4/), Salsa20, SOSEMANUK, FISH)
 * Block Ciphers (AES, DES, Triple DES, Blowfish)
 
