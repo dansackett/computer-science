@@ -84,4 +84,7 @@ entire source string.
 
 ## More Information
 
-
+While this algorithm has been exploited in a number of ways as not truly secure
+(WEP is based on this) it does have some upside. The speed and simplicity of it
+makes it very favorable in a number of applications. It can be made efficient
+in both hardware and software.

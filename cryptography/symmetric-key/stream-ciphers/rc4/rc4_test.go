@@ -1,16 +1,19 @@
 package rc4
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func TestAlg(t *testing.T) {
-	cipher := MakeRC4([]byte("pwd12"))
-	result := cipher.Encrypt([]byte("Math 310 Proves!"))
-	fmt.Println(result)
-	for _, b := range result {
-		fmt.Printf("%X", b)
+	var secret, plaintext, encryptedOutput []byte
+
+	secret = []byte("Secret")
+	plaintext = []byte("Attack at dawn")
+	encryptedOutput = []byte{135, 128, 194, 160, 112, 180, 75, 155, 220, 52, 116, 4, 157, 192}
+
+	cipher := MakeRC4(secret)
+
+	for i, b := range cipher.Encrypt(plaintext) {
+		if b != encryptedOutput[i] {
+			t.Errorf("Ciphertext bit at %d (%d) does not match expected bit %d", i, b, encryptedOutput[i])
+		}
 	}
-	fmt.Println()
 }
