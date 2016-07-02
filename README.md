@@ -107,10 +107,13 @@ principles in Golang. The following items are going to be examined:
 ### Cryptography
 
 **Symmetric-Key**
-* Stream Ciphers (RC4, Salsa20, SOSEMANUK, FISH)
+* [Stream Ciphers](https://github.com/dansackett/computer-science/blob/master/cryptography/) ([RC4](https://github.com/dansackett/computer-science/blob/master/cryptography/symmetric-key/stream-ciphers/rc4/), Salsa20, SOSEMANUK, FISH)
 * Block Ciphers (AES, DES, Triple DES, Blowfish)
-* Hash Functions (MD5, SHA1, SHA2, HMAC, )
 
 **Public Key Cryptography**
 * RSA Algorithm
 * DSA Algorithm
+
+**Misc**
+* Hash Functions (MD5, SHA1, SHA2, HMAC)
+* PGP
