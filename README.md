@@ -83,6 +83,11 @@ principles in Golang. The following items are going to be examined:
 * Knuth-Morris-Pratt (KMP)
 * Rabin-Karp
 
+## Common Interview Questions
+
+* [Run-length Encoding / Decoding](https://github.com/dansackett/computer-science/blob/master/interview-questions/strings/run_length_encoding.go)
+* [Check if string is a substring](https://github.com/dansackett/computer-science/blob/master/interview-questions/strings/is_substring.go)
+
 ### Misc
 
 * [Recursive Palindromes](https://github.com/dansackett/computer-science/blob/master/algorithms/recursion/palindromes.go)
