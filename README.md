@@ -3,6 +3,12 @@
 This repository will be a place to practice computer science and crytpography
 principles in Golang. The following items are going to be examined:
 
+### Notes
+
+* [Asymptotic Notation](https://github.com/dansackett/computer-science/blob/master/notes/asymptotic_notation.md)
+* [Powers of 2 Reference](https://github.com/dansackett/computer-science/blob/master/notes/powers_of_two.md)
+* [Bit Manipulation](https://github.com/dansackett/computer-science/blob/master/notes/bit_manipulation.md)
+
 ### Data Structures
 
 * [Linked List](https://github.com/dansackett/computer-science/blob/master/data-structures/linked-list)
