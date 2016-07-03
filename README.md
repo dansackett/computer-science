@@ -102,9 +102,9 @@ principles in Golang. The following items are going to be examined:
 
 ### Design Patterns
 
-* Factory
-* Singleton
-* Adapter
+* [Factory](https://github.com/dansackett/computer-science/blob/master/design-patterns/factory/)
+* [Singleton](https://github.com/dansackett/computer-science/blob/master/design-patterns/singleton/)
+* [Adapter](https://github.com/dansackett/computer-science/blob/master/design-patterns/adapter/)
 * Decorator
 * Observer
 * Iterator
