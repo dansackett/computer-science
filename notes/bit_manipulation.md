@@ -275,3 +275,208 @@ though then we will return true.
 
 With bit manipulation we took a logarithmic algorithm and made it a constant
 time algorithm.
+
+## Tips and Tricks
+
+**Determine if a number is odd or even**
+
+If we want to determine if a number is odd or even we can simply check the
+output of `x & 1`. The reasoning here is that odd numbers will always have the
+least significant bit set. When we do an `&` with 1 then it should clear all
+the bits if the number is even. If it's odd then it will clear all the bits
+except for the least significant bit. Below is an example of this:
+
+```
+X = 43 = 00101011
+
+43 & 1 = 00101011 & 00000001
+
+  00101011
+  00000001
+& --------
+  00000001
+```
+
+In the above example we can see that the result will be `00000001` since x has
+the least significant bit already set.
+
+**Test if the nth bit is set**
+
+Building off the last hack we already know how to check the least significant
+bit. If we want to check the nth bit then all we have to do is use a left shift
+with it. Our manipulation is `x & (1 << n)`. If we think about this it makes
+sense. Starting with 1 (00001) we shift the first bit over n times. When we do
+the `&` operation then it should clear all bits except for the nth bit if it's
+set.
+
+Let's see an example considering the number 109 and if the 3rd bit is set:
+
+```
+109 = 1101101
+
+1 << 3 = 0001000
+
+x & (1 << 3) = 109 & 8 = 1101101 & 0001000
+
+  1101101
+  0001000
+& -------
+  0001000
+```
+
+In the above example we can see that the result is a non-zero number meaning
+the third bit was set.
+
+**Setting the nth bit**
+
+On the flipside of the last hack, what if we want to ensure we set the nth bit?
+We can do this in a similiar fashion by doing `x | (1 << n)`. If we think about
+this it's almost identical to before but instead of flipping all bits with `&`
+we're using `|` which will keep all bits and for the nth bit it will ensure
+that it is flipped if it wasn't set. We can see another example using 109 as
+the number and setting the 4th bit:
+
+```
+109 = 1101101
+
+1 << 4 = 0010000
+
+x | (1 << 4) = 109 | 16 = 1101101 | 0010000
+
+  1101101
+  0010000
+| -------
+  1111101
+```
+
+In the above example we can see that our 4th bit was flipped due to the `|`
+operator essentially adding 16 to the number.
+
+**Unset the nth bit**
+
+As the compliment to the last hack we can also unset the last nth bit with
+another similiar operation of `x & ~(1 << n)`. Since negating the left shift
+will turn all bits but the nth bit to 1 and the nth bit to 0 then when we do
+the `&` operation we will see the bits from x still set but if a bit exists in
+x at position n then it will be flipped. Let's look at our example with the
+number 109 again and unsetting the 3rd bit:
+
+```
+109 = 1101101
+
+1 << 3 = 0001000
+~(1 << 3) = 1110111
+
+x & ~(1 << 3) = 109 & 119 = 1101101 & 1110111
+
+  1101101
+  1110111
+& -------
+  1100101
+```
+
+In the example above we can see that we successfully unset the nth bit turning
+109 into 101.
+
+**Toggle the nth bit**
+
+If we want to switch the nth bit from whatever it is we can use the same
+formula as the above example except using an xor `x ^ (1 << n)`. Remember with
+xor that if both bits compared equal 1 then the result will be 0. If one is 1
+and the other 0 then the result will be 1. With that in mind the n left shifts
+will give us a value where xor will essentially do the toggling. Let's look at
+an example using 109 and toggle the 3rd bit:
+
+```
+109 = 1101101
+
+1 << 3 = 0001000
+
+x ^ 1 << 3 = 109 ^ 8 = 1101101 ^ 0001000
+
+  1101101
+  0001000
+^ -------
+  1100101
+```
+
+In the above example our 3rd bit was flipped to 0. If we were to xor the result
+with 1 << 3 again then it would flip that bit back proving the toggle.
+
+**Turn off the rightmost 1 bit**
+
+In a pattern the rightmost 1 bit is the smallest bit set. If we want to make
+sure it is turned off then we can check `x & (x - 1)`. We looked at this
+property in the first algorithm example but another example never hurts:
+
+```
+109 = 1101101
+
+x - 1 = 108 = 1101100
+
+x & (x - 1) = 109 & 108 = 1101101 & 1101100
+
+  1101101
+  1101100
+& -------
+  1101100
+```
+
+In the above example we see the result is the same pattern as 109 except the
+rightmost 1 bit has been flipped. Coincidentily this equals the same as x - 1
+but that's not always the case.
+
+**Isolate the rightmost 1 bit**
+
+Working with the rightmost 1 bit again we can also leave just that bit by doing
+`x & -x`. This is a negative number which isn't the same as negating the
+pattern. Before we see an example let's see how to make a number negative. You
+may hear this called the "twos compliment" which roughly means `-x = ~x + 1`.
+When dealing with twos compliment we will consider a leading 1 as a negative
+number and leading 0 as positive. So for example we can see -9:
+
+```
+9  = 01001
+-9 = ~9 + 1 = 10110 + 00001 = 10111
+```
+
+As we can see our representation of -9 negates x and adds 1. Now let's see how
+this works for isolating the rightmost 1 bit. We will use a new number of 188:
+
+```
+188  = 10111100
+-188 = 01000011 + 1 = 01000100
+
+188 & -188 = 10111100 & 01000100
+
+  10111100
+  01000100
+& --------
+  00000100
+```
+
+As we can see in the example our end result has only the rightmost 1 bit set.
+We now know this works as expected.
+
+**Set all bits to the right of the rightmost 1 bit**
+
+With this operation we find the rightmost 1 but in the pattern and set all bits
+to the right of that equal to 1 as well. We do this by running `x | (x - 1)`.
+For an example we can look at the number 188 again:
+
+```
+188  = 10111100
+x - 1 = 187 = 10111011
+
+188 | 187 = 10111100 | 10111011
+
+  10111100
+  10111011
+| --------
+  10111111
+```
+
+We know this is true because when we find x - 1 it flips all bits of x from the
+rightmost 1 bit to the least significant bit. Because of this we know that
+doing an `|` with x and x-1 will ensure that all bits right of the rightmost 1
+but will be valid and set to 1 still. The example above shows this as well.
