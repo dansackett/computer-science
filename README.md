@@ -105,10 +105,10 @@ principles in Golang. The following items are going to be examined:
 * [Factory](https://github.com/dansackett/computer-science/blob/master/design-patterns/factory/)
 * [Singleton](https://github.com/dansackett/computer-science/blob/master/design-patterns/singleton/)
 * [Adapter](https://github.com/dansackett/computer-science/blob/master/design-patterns/adapter/)
-* Decorator
-* Observer
-* Iterator
-* MVC
+* [Decorator](https://github.com/dansackett/computer-science/blob/master/design-patterns/decorator/)
+* [Observer](https://github.com/dansackett/computer-science/blob/master/design-patterns/observer/)
+* [Iterator](https://github.com/dansackett/computer-science/blob/master/design-patterns/iterator/)
+* [MVC](https://github.com/dansackett/computer-science/blob/master/design-patterns/mvc/)
 
 ### Cryptography ([Terms](https://github.com/dansackett/computer-science/blob/master/cryptography/))
 
