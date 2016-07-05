@@ -1,7 +1,5 @@
 package kmp
 
-import "fmt"
-
 func InitializeFailureTable(needle string, table *[]int) {
 	var curPos, nextCandidate int
 
@@ -12,18 +10,13 @@ func InitializeFailureTable(needle string, table *[]int) {
 	T[0], T[1] = -1, 0
 
 	for curPos < len(needle) {
-		// ABABABCA
-		fmt.Println(curPos, nextCandidate, string(needle[curPos-1]), string(needle[nextCandidate]))
 		if needle[curPos-1] == needle[nextCandidate] {
-			fmt.Println("\tCase 1")
 			T[curPos] = nextCandidate + 1
 			nextCandidate++
 			curPos++
 		} else if nextCandidate > 0 {
-			fmt.Println("\tCase 2")
 			nextCandidate = T[nextCandidate]
 		} else {
-			fmt.Println("\tCase 3")
 			T[curPos] = 0
 			curPos++
 		}
