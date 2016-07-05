@@ -86,7 +86,7 @@ principles in Golang. The following items are going to be examined:
 
 ### String Matching
 
-* Knuth-Morris-Pratt (KMP)
+* [Knuth-Morris-Pratt](https://github.com/dansackett/computer-science/blob/master/algorithms/string-matching/knuth-morris-pratt)
 * Rabin-Karp
 
 ## Common Interview Questions
